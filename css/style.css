@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* --- HEADER --- */
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1em 0 0;
+  gap: 3vw;
+  width: 100vw;
+  height: 5vh;
+  z-index: 999;
+}
+
+header img {
+  width: 3em;
+  margin: 0 1em 0;
+}
+
+#searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 20em;
+  height: 3vh;
+  background-color: rgb(251, 251, 251);
+  border-radius: 100vw;
+}
+#header_lupa {
+  width: 1em;
+  height: 70%;
+  margin: 0 0.8em 0;
+}
+
+.crear_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  width: 5em;
+  height: auto;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 0 1em 0;
+  padding: 0.5em;
+  font-weight: 600;
+}
+
+/* --- MAIN --- */
+
+main {
+  background-color: rgb(230, 230, 249);
+  width: 100%;
+  height: 300vh;
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: brightness(60%);
+}
+
+#hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: brightness(70%);
+}
+
+#hero_botones {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero p {
+  color: white;
+  font-size: clamp(2rem, 4rem, 4.5rem);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+  font-weight: 600;
+  text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+#hero_explorar p {
+  font-size: clamp(0.5rem, 1rem, 2rem) !important;
+  margin: 5rem 0 0;
+}
+#hero_explorar :nth-child(2) {
+  width: 100%;
+}
+#hero_explorar :nth-child(3) {
+  width: 75%;
+}
+#hero_explorar :nth-child(4) {
+  width: 50%;
+}
+
+#crear_button_header {
+  width: 7em;
+  height: 3em;
+  font-size: 1.2rem;
+}
+/* --- FOOTER --- */
+
+footer {
+  background-color: rgb(254, 255, 254);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 7vh;
+}
+
+footer nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  opacity: 0.9;
+}
+
+.pagina_actual {
+  opacity: 1 !important;
+}
+
+footer nav img {
+  width: 2.3em;
+}
+
+@media (min-width: 700px) {
+  main {
+    background-color: chocolate;
+  }
+  footer {
+    display: none;
+  }
+
+  header img {
+    width: 4.3em;
+  }
+
+  #searchBar {
+    width: 34em;
+  }
+
+  .crear_button {
+    width: 6em;
+    border-radius: 5px;
+  }
+}
