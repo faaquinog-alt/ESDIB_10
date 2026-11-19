@@ -6,6 +6,7 @@
     <title>MEM·Diseñadores y Artistas en Mallorca</title>
     <link rel="icon" href="assets/iconos/mem_logo.svg">
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/index.js"></script>
   </head>
   <body>
     <header>
@@ -13,7 +14,15 @@
       <div id="searchBar">
         <img id="header_lupa" src="assets/iconos/lupa_icon.svg"></img>
       </div>
-      <button class="crear_button">CREAR</button>
+      <div id="iconos__header">
+          <nav >
+            <img class="pagina_actual" src="assets/iconos/home_icon.svg" alt="" />
+            <img src="assets/iconos/comunity_icon.svg" alt="" />
+            <img src="assets/iconos/events_icon.svg" alt="" />
+            <img src="assets/iconos/projects_icon.svg" alt="" />
+          </nav>
+        <button class="crear_button">CREAR</button>
+      </div>
     </header>
     <main>
       <div id="hero">
@@ -32,15 +41,49 @@
           </div>
         </div>
       </div>
+      <h2>PARA TI</h2>
+      <hr>
+      <article>
+        <div><!--Contenedor de la imagen-->
+          <div class="etiqueta__container">
+            <div class="etiqueta"></div>
+            <div class="etiqueta"></div>
+          </div> <!--Etiquetas (absolute)-->
+          <div class="mapa"></div> <!--Mapa (absolute)-->
+          <img src="assets/images/profile_pic_BORRAR.jpg" alt="">
+          
+        </div> 
+        <div id="article__info"> <!--Contenedor de info-->
+          <div> <!--Perfil (imagen y nombre)-->
+            <img src="assets/images/profile_pic_BORRAR.jpg" alt="">
+            <p>PEPE</p>
+          </div>
+          <div id="article__info__texto">
+            <h3>Titulo</h3> <!-- Titulo Entrada-->
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet, quibusdam atque nulla inventore architecto expedita. Possimus sint necessitatibus rerum ad voluptas? Dignissimos, commodi aut molestiae labore totam rem at!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet, quibusdam atque nulla inventore architecto expedita. Possimus sint necessitatibus rerum ad voluptas? Dignissimos, commodi aut molestiae labore totam rem at!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet, quibusdam atque nulla inventore architecto expedita. Possimus sint necessitatibus rerum ad voluptas? Dignissimos, commodi aut molestiae labore totam rem at!
+            </p> <!--Cuerpo de texto Entrada-->
+          </div>
+          <div> <!--Likes-->
+            <a href="">
+              <img src="" alt=""> <!--Icono Maps-->
+              <p></p> <!--Lugar-->
+            </a>
+            <bUtton>ASISTIR</bUtton>
+            <div> <!--Bombilla-->
+              <img src="" alt="">
+              <p></p>
+            </div>
+            <div> <!--Guardar-->
+              <img src="" alt="">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <hr>
     </main>
-    <aside>
-      <nav>
-        <img class="pagina_actual" src="assets/iconos/home_icon.svg" alt="" />
-        <img src="assets/iconos/comunity_icon.svg" alt="" />
-        <img src="assets/iconos/events_icon.svg" alt="" />
-        <img src="assets/iconos/projects_icon.svg" alt="" />
-      </nav>
-    </aside>
     <footer>
       <nav>
         <img class="pagina_actual" src="assets/iconos/home_icon.svg" alt="" />
@@ -49,5 +92,6 @@
         <img src="assets/iconos/projects_icon.svg" alt="" />
       </nav>
     </footer>
+    
   </body>
 </html>
