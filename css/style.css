@@ -6,6 +6,9 @@ body {
 :root {
   font-family: Arial, Helvetica, sans-serif;
 }
+.none{
+  display: none;
+}
 /* --- HEADER --- */
 header {
   position: fixed;
@@ -17,6 +20,12 @@ header {
   width: 100vw;
   height: 5vh;
   z-index: 999;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.34);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(11.5px);
+-webkit-backdrop-filter: blur(11.5px);
+border: 1px solid rgba(255, 255, 255, 0.44);
 }
 
 header div {
@@ -56,9 +65,30 @@ header img {
   margin: 0 1em 0;
   padding: 0.5em;
   font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 #iconos__header nav {
   display: none;
+}
+.article__icon__container{
+  padding: 1em 0 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.article__icon__container > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.article__icon__container > div > p{
+  margin: 0;
+}
+.article__icon{
+  width: 2em;
 }
 
 /* --- MAIN --- */
@@ -66,7 +96,6 @@ header img {
 main {
   background-color: white;
   width: 100%;
-  height: 300vh;
 }
 
 /* -- HERO --*/
@@ -149,23 +178,33 @@ article {
 }
 
 article > :nth-child(1) {
+  position: relative;
   width: 100%;
   height: auto;
 }
-
+article > div {
+  display: flex;
+  align-items: center;
+}
 article > div > img {
   max-width: 100%;
+  max-height: 50vw;
+  margin: auto;
 }
 .etiqueta__container {
   position: absolute;
   margin: 1em;
   display: flex;
+  top: 0;
   gap: 3px;
 }
 .etiqueta {
-  width: 4em;
-  height: 1em;
+  padding: 0.5em 0.7em;
   border-radius: 30px;
+  background-color: rgb(215, 85, 4);
+  text-align: center;
+  font-size: 0.5em;
+  color: white;
 }
 /*.mapa {  
   position: absolute;
@@ -175,33 +214,33 @@ article > div > img {
   height: 4em;
   background-color: blue;
 }*/
-#article__info {
+.article__info {
   display: flex;
+  align-items: flex-start;
   overflow: scroll;
   width: 100%;
   height: 20vh;
   transition: 300ms;
 }
 
-#article__info > :nth-child(1) {
-  width: 20vw;
+.article__info > :nth-child(1) {
+  width: 10vw;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  padding: 20px 0 0;
+  padding: 20px 10px 0;
 }
-#article__info > :nth-child(1) > img {
+.article__info > :nth-child(1) > img {
   max-width: 100%;
   width: 15vw;
-  height: 15vw;
   border-radius: 50%;
 }
-#article__info > :nth-child(1) > p {
+.article__info > :nth-child(1) > p {
   font-size: 0.7em;
 }
 
-#article__info > :nth-child(2) {
+.article__info > :nth-child(2) {
   width: 70vw;
   display: flex;
   flex-direction: column;
@@ -243,7 +282,9 @@ footer nav img {
 
 @media (min-width: 840px) {
   main {
-    background-color: chocolate;
+    background-color: white;
+    width: 70%;
+    margin: auto;
   }
   footer {
     display: none;
@@ -272,6 +313,11 @@ footer nav img {
     justify-content: space-between;
     width: 90vw;
     left: 5vw;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
   }
 
   #searchBar {
@@ -281,6 +327,12 @@ footer nav img {
     transform: translate(-50%, -50%);
     width: min(44em, 36vw);
   }
+
+  /* MAIN DESKTOP*/
+  .article__info > :nth-child(1) {
+    width: 5vw;
+  }
+
 }
 
 @media (max-width: 1200px) {
