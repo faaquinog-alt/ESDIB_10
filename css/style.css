@@ -9,6 +9,10 @@ body {
 .none{
   display: none;
 }
+
+p{
+  margin-block-start: 0.2em;
+}
 /* --- HEADER --- */
 header {
   position: fixed;
@@ -21,7 +25,7 @@ header {
   height: 5vh;
   z-index: 999;
   /* From https://css.glass */
-background: rgba(255, 255, 255, 0.34);
+background: rgba(255, 255, 255, 0.825);
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(11.5px);
 -webkit-backdrop-filter: blur(11.5px);
@@ -45,6 +49,7 @@ header img {
   height: 3vh;
   background-color: rgb(251, 251, 251);
   border-radius: 100vw;
+  box-shadow: inset 0 0 10px #acc4d4;
 }
 #header_lupa {
   width: 1em;
@@ -96,6 +101,7 @@ header img {
 main {
   background-color: white;
   width: 100%;
+  padding-bottom: 20em;
 }
 
 /* -- HERO --*/
@@ -182,6 +188,67 @@ article > :nth-child(1) {
   width: 100%;
   height: auto;
 }
+
+.article__info {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+  transition: 300ms;
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+}
+
+.article__info.abierto {
+  height: auto;
+  overflow: visible;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.article__perfil {
+  flex: none;
+  width: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  padding: 20px 10px 0;
+  gap: 10px;
+}
+
+.article__info__texto {
+  flex: 1;          /* en vez de width: 70vw */
+  min-width: 0;     /* el texto salta de línea en vez de empujar */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 0 10px 0;
+}
+
+.article__likes {
+  flex: none;       /* los likes mantienen su tamaño */
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px 0;
+  max-width: 20vw;
+  justify-content: center;
+  align-items: center;
+}
+.article__adress{
+  display: flex;
+  align-items: center;
+}
+.article__adress > img{
+  width: 0.7em;
+}
+.article__adress > p{
+  margin-block-start: 1em;
+  margin-left: 5px;
+  font-size: 0.5rem;
+}
 article > div {
   display: flex;
   align-items: center;
@@ -206,48 +273,32 @@ article > div > img {
   font-size: 0.5em;
   color: white;
 }
-/*.mapa {  
+.mapa {  
   position: absolute;
-  right: 10px;
-  margin-top: 10vh;
+  right: 1em;
+  bottom: 1em;
   width: 4em;
   height: 4em;
   background-color: blue;
-}*/
-.article__info {
-  display: flex;
-  align-items: flex-start;
-  overflow: scroll;
-  width: 100%;
-  height: 20vh;
-  transition: 300ms;
+  overflow: hidden; 
 }
 
-.article__info > :nth-child(1) {
-  width: 10vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  padding: 20px 10px 0;
+.mapa iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
-.article__info > :nth-child(1) > img {
+
+.article__perfil > img {
   max-width: 100%;
-  width: 15vw;
+  min-width: 3em;
   border-radius: 50%;
 }
-.article__info > :nth-child(1) > p {
+.article__perfil > p {
   font-size: 0.7em;
+  font-style: italic;
 }
 
-.article__info > :nth-child(2) {
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  padding: 10px;
-}
 h3 {
   margin: 12px 0 5px;
 }
@@ -329,10 +380,47 @@ footer nav img {
   }
 
   /* MAIN DESKTOP*/
-  .article__info > :nth-child(1) {
-    width: 5vw;
+  article {
+    display: grid;
+    grid-template-columns: 45% 1fr;
+    align-items: start;          /* image at the top of the article */
   }
 
+  article > :nth-child(1) {
+    width: auto;
+    align-items: flex-start;     /* overrides "article > div { align-items: center }" */
+  }
+
+  article > div > img {
+    margin: 0 auto;              /* no vertical auto-margin centering */
+  }
+
+  .article__info {
+    width: auto;
+    min-width: 0;
+    align-self: stretch;
+    height: 0;                   /* contributes nothing to the row height... */
+    min-height: 100%;            /* ...but fills the row, i.e. the image height */
+    overflow: hidden;
+    /* keeps the fade-out mask from the base styles */
+  }
+
+  .article__info.abierto {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .article__perfil {
+    width: 5vw;
+    padding: 0 0.5em 0;
+  }
+  .article__likes{
+    padding: 0;
+    max-width: 10vw;
+  }
 }
 
 @media (max-width: 1200px) {

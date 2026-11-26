@@ -7,22 +7,16 @@ function abrirArticle() {
 
     if (!articleInfo || !triggerTexto) return; // Si falta alguno de los dos, evita errores
 
-    // Estado inicial del contenedor
-    articleInfo.style.height = '20vh';
-    articleInfo.style.overflow = 'hidden';
-
     // Indicamos que el texto es clickable
     triggerTexto.style.cursor = 'pointer';
 
     triggerTexto.addEventListener('click', () => {
-      const isCollapsed = articleInfo.style.height === '20vh';
+      const isCollapsed = !articleInfo.classList.contains('abierto');
 
       if (isCollapsed) {
-        articleInfo.style.height = 'auto';
-        articleInfo.style.overflow = 'visible';
+        articleInfo.classList.add('abierto');
       } else {
-        articleInfo.style.height = '20vh';
-        articleInfo.style.overflow = 'hidden';
+        articleInfo.classList.remove('abierto');
       }
     });
   });
