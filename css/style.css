@@ -171,6 +171,12 @@ main {
   font-size: 1.2rem;
 }
 
+/*-- ASIDE --*/
+
+aside{
+  display: none;
+}
+
 /* -- PARA TI --*/
 
 h2 {
@@ -187,7 +193,7 @@ article > :nth-child(1) {
   position: relative;
   width: 100%;
   height: auto;
-  overflow-x: scroll;
+  overflow: hidden; /* sin scroll: el carrusel se mueve con botones */
 }
 
 .article__info {
@@ -259,10 +265,101 @@ article > div {
   display: flex;
   align-items: center;
 }
-article > div > img {
-  max-width: 100%;
-  max-height: 50vw;
-  margin: auto;
+/* --- CARRUSEL --- */
+.carrusel__track {
+  display: flex;
+  flex: 0 0 100%;
+  min-width: 0;
+  transition: transform 350ms ease;
+  touch-action: pan-y; /* deja el scroll vertical, el JS gestiona el horizontal */
+}
+.carrusel__track > img {
+  flex: 0 0 100%;
+  min-width: 0;
+  width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.carrusel__btn {
+  --btn-size: 1rem;           /* tamaño del círculo: cámbialo aquí */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 0;               /* oculta el carácter ‹ › del HTML */
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 6px;
+  transition: background 150ms, opacity 150ms;
+}
+/* Flecha dibujada con bordes: queda centrada en el círculo */
+.carrusel__btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  width: 38%;
+  height: 38%;
+  border: solid #222;
+}
+.carrusel__btn--prev::before {
+  border-width: 0 0 2px 2px;
+  transform: translate(-5%, -50%) rotate(45deg);
+}
+.carrusel__btn--next::before {
+  border-width: 2px 2px 0 0;
+  transform: translate(-65%, -50%) rotate(45deg);
+}
+.carrusel__btn:hover {
+  background: white;
+}
+.carrusel__btn:focus-visible {
+  outline: 2px solid red;
+  outline-offset: 2px;
+}
+.carrusel__btn--prev { left: 0.6rem; }
+.carrusel__btn--next { right: 0.6rem; }
+.carrusel--single .carrusel__btn,
+.carrusel--single .carrusel__dots {
+  display: none; /* si solo hay una imagen, no hacen falta controles */
+}
+.carrusel__dots {
+  position: absolute;
+  bottom: 0.7em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+}
+.carrusel__dots button {
+  width: 5px;
+  height: 5px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 3px;
+  cursor: pointer;
+}
+.carrusel__dots button.activo {
+  background: white;
+  transform: scale(1.3);
+}
+@media (max-width: 839px) {
+  .carrusel__btn { display: none; } /* en móvil se desliza con el dedo */
+}
+@media (prefers-reduced-motion: reduce) {
+  .carrusel__track { transition: none; }
 }
 .etiqueta__container {
   position: absolute;
@@ -340,8 +437,23 @@ footer nav img {
 @media (min-width: 840px) {
   main {
     background-color: white;
-    width: 70%;
+    width: 100%;
     margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  main > div{
+    width: 70%;
+  }
+
+  aside{
+    display: block;
+    background-color: red;
+    height: 100vh;
+    width: 25%;
+    position: sticky;
+    z-index: 100;
   }
   footer {
     display: none;
@@ -395,10 +507,6 @@ footer nav img {
   article > :nth-child(1) {
     width: auto;
     align-items: flex-start;     /* overrides "article > div { align-items: center }" */
-  }
-
-  article > div > img {
-    margin: 0 auto;              /* no vertical auto-margin centering */
   }
 
   .article__info {

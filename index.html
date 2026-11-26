@@ -41,7 +41,10 @@
         </div>
       </div>
     <main>
-      
+      <aside>
+          hola
+      </aside>
+      <div id="articles">
       <h2>PARA TI</h2>
       <hr>
       <article>
@@ -53,9 +56,13 @@
          <!-- <div class="mapa">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6160.13510971434!2d3.149847400857691!3d39.46780253364069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12964dbcbbec2a53%3A0x1a35c76b05aba84a!2sMercado%20Municipal%20de%20Felanitx!5e0!3m2!1ses!2ses!4v1795681199865!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>--> <!--Mapa (absolute)-->
-          <img src="assets/images/projecto1.jpg" alt="">
-          <img src="assets/images/projecto1.jpg" alt="">
-          <img src="assets/images/projecto1.jpg" alt="">
+          <div class="carrusel__track">
+            <img src="assets/images/projecto1.jpg" alt="">
+            <img src="assets/images/projecto1.jpg" alt="">
+          </div>
+          <button class="carrusel__btn carrusel__btn--prev" type="button" aria-label="Imagen anterior">&#8249;</button>
+          <button class="carrusel__btn carrusel__btn--next" type="button" aria-label="Imagen siguiente">&#8250;</button>
+          <div class="carrusel__dots"></div> <!--Puntos (los crea el JS)-->
         </div> 
         <div class="article__info"> <!--Contenedor de info-->
           <div class="article__perfil&info">
@@ -96,8 +103,120 @@
         </div>
       </article>
       <hr>
-      
+      <article>
+        <div><!--Contenedor de la imagen-->
+          <div class="etiqueta__container">
+            <div class="etiqueta">ejemplo</div>
+            <div class="etiqueta">ejemplo2</div>
+          </div> <!--Etiquetas (absolute)-->
+         <!-- <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6160.13510971434!2d3.149847400857691!3d39.46780253364069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12964dbcbbec2a53%3A0x1a35c76b05aba84a!2sMercado%20Municipal%20de%20Felanitx!5e0!3m2!1ses!2ses!4v1795681199865!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>--> <!--Mapa (absolute)-->
+          <div class="carrusel__track">
+            <img src="assets/images/2026_ChainsawMan.webp" alt="">
+            <img src="assets/images/2026_Aki.webp" alt="">
+            <img src="assets/images/2026_Beam.webp" alt="">
+            <img src="assets/images/2026_DenjiYPower.webp" alt="">
+            <img src="assets/images/2026_Kobeni.webp" alt="">
+            <img src="assets/images/2026_MakimaRenderLowPoly.webp" alt="">
+          </div>
+          <button class="carrusel__btn carrusel__btn--prev" type="button" aria-label="Imagen anterior">&#8249;</button>
+          <button class="carrusel__btn carrusel__btn--next" type="button" aria-label="Imagen siguiente">&#8250;</button>
+          <div class="carrusel__dots"></div> <!--Puntos (los crea el JS)-->
+        </div> 
+        <div class="article__info"> <!--Contenedor de info-->
+          <div class="article__perfil&info">
+            <div class="article__perfil"> <!--Perfil (imagen y nombre)-->
+              <img src="assets/images/profile_pic1.webp" alt="">
+              <p>@MUHLMEN</p>
+            </div>
+            <div class="article__info__texto">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet, quibusdam atque nulla inventore architecto expedita. Possimus sint necessitatibus rerum ad voluptas? Dignissimos, commodi aut molestiae labore totam rem at!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet, quibusdam atque nulla inventore architecto expedita. Possimus sint necessitatibus rerum ad voluptas? Dignissimos, commodi aut molestiae labore totam rem at!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet, quibusdam atque nulla inventore architecto expedita. Possimus sint necessitatibus rerum ad voluptas? Dignissimos, commodi aut molestiae labore totam rem at!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet, quibusdam atque nulla inventore architecto expedita. Possimus sint necessitatibus rerum ad voluptas? Dignissimos, commodi aut molestiae labore totam rem at!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet, quibusdam atque nulla inventore architecto expedita. Possimus sint necessitatibus rerum ad voluptas? Dignissimos, commodi aut molestiae labore totam rem at!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet, quibusdam atque nulla inventore architecto expedita. Possimus sint necessitatibus rerum ad voluptas? Dignissimos, commodi aut molestiae labore totam rem at!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet, quibusdam atque nulla inventore architecto expedita. Possimus sint necessitatibus rerum ad voluptas? Dignissimos, commodi aut molestiae labore totam rem at!
+            </p> <!--Cuerpo de texto Entrada-->
+          </div>
+          </div>
+          <div class="article__likes"> <!--Likes-->
+            <a class="article__adress" href="">
+              <img src="assets/iconos/adress_icon.svg" alt=""> <!--Icono Maps-->
+              <p>C/ de la Mar, 9, 07200 Felanitx, Illes Balears</p> <!--Lugar-->
+            </a>
+            <button class="crear_button">ASISTIR</button>
+            <div class="article__icon__container">
+              <div class="article__idea"> <!--Bombilla-->
+                <img class="article__icon" src="assets/iconos/notidea_icon.svg" alt="">
+                <img class="article__icon none" src="assets/iconos/idea_icon.svg" alt="">
+                <p>0</p>
+              </div>
+              <div class="article__guardar"> <!--Guardar-->
+                <img class="article__icon" src="assets/iconos/save_icon.svg" alt="">
+                <img class="article__icon none" src="assets/iconos/saved_icon.svg" alt="">
+                <p>0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
       <hr>
+      <article>
+        <div><!--Contenedor de la imagen-->
+          <div class="etiqueta__container">
+            <div class="etiqueta">ejemplo</div>
+            <div class="etiqueta">ejemplo2</div>
+          </div> <!--Etiquetas (absolute)-->
+         <!-- <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6160.13510971434!2d3.149847400857691!3d39.46780253364069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12964dbcbbec2a53%3A0x1a35c76b05aba84a!2sMercado%20Municipal%20de%20Felanitx!5e0!3m2!1ses!2ses!4v1795681199865!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>--> <!--Mapa (absolute)-->
+          <div class="carrusel__track">
+            <img src="assets/images/Publicación instagram-38.jpg" alt="">
+          <img src="assets/images/Publicación instagram-39.jpg" alt="">
+          <img src="assets/images/Publicación instagram-40.jpg" alt="">
+          <img src="assets/images/Publicación instagram-41.jpg" alt="">
+          <img src="assets/images/Publicación instagram-42.jpg" alt="">
+          </div>
+          <button class="carrusel__btn carrusel__btn--prev" type="button" aria-label="Imagen anterior">&#8249;</button>
+          <button class="carrusel__btn carrusel__btn--next" type="button" aria-label="Imagen siguiente">&#8250;</button>
+          <div class="carrusel__dots"></div> <!--Puntos (los crea el JS)-->
+        </div> 
+        <div class="article__info"> <!--Contenedor de info-->
+          <div class="article__perfil&info">
+            <div class="article__perfil"> <!--Perfil (imagen y nombre)-->
+              <img src="assets/images/profile_pic2.webp" alt="">
+              <p>@Tsez_art</p>
+            </div>
+            <div class="article__info__texto">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet, quibusdam atque nulla inventore architecto expedita. Possimus sint necessitatibus rerum ad voluptas? Dignissimos, commodi aut molestiae labore totam rem at!
+            </p> <!--Cuerpo de texto Entrada-->
+          </div>
+          </div>
+          <div class="article__likes"> <!--Likes-->
+            <a class="article__adress" href="">
+              <img src="assets/iconos/adress_icon.svg" alt=""> <!--Icono Maps-->
+              <p>C/ de la Mar, 9, 07200 Felanitx, Illes Balears</p> <!--Lugar-->
+            </a>
+            <button class="crear_button">ASISTIR</button>
+            <div class="article__icon__container">
+              <div class="article__idea"> <!--Bombilla-->
+                <img class="article__icon" src="assets/iconos/notidea_icon.svg" alt="">
+                <img class="article__icon none" src="assets/iconos/idea_icon.svg" alt="">
+                <p>0</p>
+              </div>
+              <div class="article__guardar"> <!--Guardar-->
+                <img class="article__icon" src="assets/iconos/save_icon.svg" alt="">
+                <img class="article__icon none" src="assets/iconos/saved_icon.svg" alt="">
+                <p>0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <hr>
+      </div>
     </main>
     <footer>
       <nav>
